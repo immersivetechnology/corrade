@@ -253,7 +253,7 @@ doesn't know about yet.
 @see @ref CORRADE_TARGET_SSE2, @ref CORRADE_TARGET_SSE3,
     @ref CORRADE_TARGET_SSSE3, @ref CORRADE_TARGET_SSE41,
     @ref CORRADE_TARGET_SSE42, @ref CORRADE_TARGET_AVX,
-    @ref CORRADE_TARGET_AVX2
+    @ref CORRADE_TARGET_AVX2, @relativeref{Corrade,Simd}
 */
 #define CORRADE_TARGET_X86
 #undef CORRADE_TARGET_X86
@@ -271,7 +271,7 @@ multi-architecture binaries. If neither @ref CORRADE_TARGET_X86,
 @ref CORRADE_TARGET_WASM is defined, the platform might be either a very old
 pre-WebAssembly @ref CORRADE_TARGET_EMSCRIPTEN or any other that the library
 doesn't know about yet.
-@see @ref CORRADE_TARGET_NEON
+@see @ref CORRADE_TARGET_NEON, @relativeref{Corrade,Simd}
 */
 #define CORRADE_TARGET_ARM
 #undef CORRADE_TARGET_ARM
@@ -309,7 +309,7 @@ multi-architecture binaries. If neither @ref CORRADE_TARGET_X86,
 @ref CORRADE_TARGET_WASM is defined, the platform might be either a very old
 pre-WebAssembly @ref CORRADE_TARGET_EMSCRIPTEN or any other that the library
 doesn't know about yet.
-@see @ref CORRADE_TARGET_SIMD128
+@see @ref CORRADE_TARGET_SIMD128, @relativeref{Corrade,Simd}
 */
 #define CORRADE_TARGET_WASM
 #undef CORRADE_TARGET_WASM
@@ -494,6 +494,7 @@ Defined on @ref CORRADE_TARGET_X86 "x86" if
 [Streaming SIMD Extensions 2](https://en.wikipedia.org/wiki/SSE2) are enabled
 at compile time (`-msse2` or higher on GCC/Clang, `/arch:SSE2` or higher on
 MSVC). All x86-64 targets support SSE2. Implied by @ref CORRADE_TARGET_SSE3.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Sse2}
 */
 #define CORRADE_TARGET_SSE2
 #undef CORRADE_TARGET_SSE2
@@ -507,6 +508,7 @@ Defined on @ref CORRADE_TARGET_X86 "x86" if
 at compile time (on GCC/Clang it's `-msse3` and higher, MSVC doesn't have a
 direct option and it's only implied by `/arch:AVX`). Superset of
 @ref CORRADE_TARGET_SSE2, implied by @ref CORRADE_TARGET_SSSE3.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Sse3}
 */
 #define CORRADE_TARGET_SSE3
 #undef CORRADE_TARGET_SSE3
@@ -525,6 +527,7 @@ Note that certain older AMD processors have [SSE4a](https://en.wikipedia.org/wik
 but neither SSSE3 nor SSE4.1. Both can be however treated as a subset of SSE4.1
 to a large extent, and it's recommended to use @ref CORRADE_TARGET_SSE41 to
 detect those.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Ssse3}
 */
 #define CORRADE_TARGET_SSSE3
 #undef CORRADE_TARGET_SSSE3
@@ -543,6 +546,7 @@ Note that certain older AMD processors have [SSE4a](https://en.wikipedia.org/wik
 but neither SSSE3 nor SSE4.1. Both can be however treated as a subset of SSE4.1
 to a large extent, and it's recommended to use @ref CORRADE_TARGET_SSE41 to
 detect those.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Sse41}
 */
 #define CORRADE_TARGET_SSE41
 #undef CORRADE_TARGET_SSE41
@@ -556,6 +560,7 @@ Defined on @ref CORRADE_TARGET_X86 "x86" if
 are enabled at compile time (on GCC/Clang it's `-msse4.2` and higher, MSVC
 doesn't have a direct option and it's only implied by `/arch:AVX`). Superset of
 @ref CORRADE_TARGET_SSE41, implied by @ref CORRADE_TARGET_AVX.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Sse42}
 */
 #define CORRADE_TARGET_SSE42
 #undef CORRADE_TARGET_SSE42
@@ -569,6 +574,7 @@ Defined on @ref CORRADE_TARGET_X86 "x86" if
 are enabled at compile time (`-mavx` and higher on GCC/Clang, `/arch:AVX` on
 MSVC). Superset of @ref CORRADE_TARGET_SSE42, implied by
 @ref CORRADE_TARGET_AVX2.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Avx}
 */
 #define CORRADE_TARGET_AVX
 #undef CORRADE_TARGET_AVX
@@ -581,6 +587,7 @@ Defined on @ref CORRADE_TARGET_X86 "x86" if
 [Advanced Vector Extensions 2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2)
 are enabled at compile time (`-mavx2` and higher on GCC/Clang, `/arch:AVX2` on
 MSVC). Superset of @ref CORRADE_TARGET_AVX.
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Avx2}
 */
 #define CORRADE_TARGET_AVX2
 #undef CORRADE_TARGET_AVX2
@@ -593,6 +600,7 @@ Defined on @ref CORRADE_TARGET_ARM "ARM" if
 [ARM NEON](https://en.wikipedia.org/wiki/ARM_architecture#Advanced_SIMD_(Neon))
 instructions are enabled at compile time (`-mfpu=neon` on GCC/Clang, implicitly
 supported on AArch64).
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Neon}
 */
 #define CORRADE_TARGET_NEON
 #undef CORRADE_TARGET_NEON
@@ -604,6 +612,7 @@ supported on AArch64).
 Defined on @ref CORRADE_TARGET_WASM "WebAssembly" if
 [128-bit SIMD](https://github.com/webassembly/simd) instructions are enabled at
 compile time (`-msimd128` passed to Clang).
+@see @relativeref{Corrade,Simd}, @relativeref{Corrade,Simd::Simd128}
 */
 #define CORRADE_TARGET_SIMD128
 #undef CORRADE_TARGET_SIMD128

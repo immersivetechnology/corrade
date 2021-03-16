@@ -27,6 +27,8 @@
 corrade_add_test(MainTest MainTest.cpp
     ARGUMENTS --arg-utf hýždě --arg-another šňůra)
 
+corrade_add_test(SimdTest SimdTest.cpp)
+
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/configure.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/configure.h)
 corrade_add_test(TargetTest TargetTest.cpp)
