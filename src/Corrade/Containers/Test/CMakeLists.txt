@@ -86,6 +86,8 @@ set_target_properties(
     ContainersArrayTest
     ContainersArrayTupleTest
     ContainersArrayViewTest
+    ContainersGrowableArrayTest
+    ContainersGrowableArraySa___FailTest
     ContainersBigEnumSetTest
     ContainersEnumSetTest
     ContainersLinkedListTest
